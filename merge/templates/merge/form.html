@@ -1,0 +1,287 @@
+<!-- <!DOCTYPE html>
+<html>
+<body>
+  <h1>Merge PDFs</h1>
+  
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="file1">Select first PDF:</label>
+    <input type="file" name="file1" id="file1">
+    <br>
+    <label for="file2">Select second PDF:</label>
+    <input type="file" name="file2" id="file2">
+    <br>
+    <input type="submit" value="Merge PDFs">
+  </form>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merge PDFs</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 100%;
+    text-align: center;
+  }
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 16px;
+  }
+  input[type="file"] {
+    display: none;
+  }
+  .custom-file-upload {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  .custom-file-upload:hover {
+    background-color: #0056b3;
+  }
+  input[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  input[type="submit"]:hover {
+    background-color: #218838;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Merge PDFs</h1>
+    
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <label for="file1">Select first PDF:</label>
+      <label class="custom-file-upload" for="file1">Choose File</label>
+      <input type="file" name="file1" id="file1" accept=".pdf" onchange="updateFileName('file1')">
+      <span id="file1-name"></span>
+      <br>
+      <label for="file2">Select second PDF:</label>
+      <label class="custom-file-upload" for="file2">Choose File</label>
+      <input type="file" name="file2" id="file2" accept=".pdf" onchange="updateFileName('file2')">
+      <span id="file2-name"></span>
+      <br>
+      <input type="submit" value="Merge PDFs">
+    </form>
+  </div>
+
+  <script>
+    function updateFileName(inputId) {
+      const fileInput = document.getElementById(inputId);
+      const fileNameContainer = document.getElementById(inputId + "-name");
+      fileNameContainer.textContent = fileInput.files[0].name;
+    }
+  </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merge PDFs</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  .language-buttons {
+    margin-bottom: 20px;
+  }
+  .language-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+  }
+  .language-button:hover {
+    background-color: #0056b3;
+  }
+  .container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 100%;
+    text-align: center;
+  }
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 16px;
+  }
+  input[type="file"] {
+    display: none;
+  }
+  .custom-file-upload {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  .custom-file-upload:hover {
+    background-color: #0056b3;
+  }
+  input[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  input[type="submit"]:hover {
+    background-color: #218838;
+  }
+  .footer {
+    margin-top: 20px;
+    color: #777;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+  <div class="language-buttons">
+    <button class="language-button" onclick="setLanguage('en')">English</button>
+    <button class="language-button" onclick="setLanguage('ar')">العربية</button>
+  </div>
+
+  <div class="container">
+    <h1 id="title">Merge PDFs</h1>
+    
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <label for="file1" id="file1-label">Select first PDF:</label>
+      <label class="custom-file-upload" for="file1">Choose File</label>
+      <input type="file" name="file1" id="file1" accept=".pdf" onchange="updateFileName('file1')">
+      <span id="file1-name"></span>
+      <br>
+      <label for="file2" id="file2-label">Select second PDF:</label>
+      <label class="custom-file-upload" for="file2">Choose File</label>
+      <input type="file" name="file2" id="file2" accept=".pdf" onchange="updateFileName('file2')">
+      <span id="file2-name"></span>
+      <br>
+      <input type="submit" value="Merge PDFs" id="merge-btn">
+    </form>
+  </div>
+
+  <div class="footer">
+    <p id="footer-text">© Your Name | All rights reserved</p>
+  </div>
+
+  <script>
+    // English translations
+    const englishTranslations = {
+      title: "Merge PDFs",
+      file1Label: "Select first PDF:",
+      file2Label: "Select second PDF:",
+      mergeBtn: "Merge PDFs",
+      footerText: "© Development and design, Abu Ali | All rights reserved"
+    };
+
+    // Arabic translations
+    const arabicTranslations = {
+      title: "دمج ملفات PDF",
+      file1Label: "حدد الملف الأول:",
+      file2Label: "حدد الملف الثاني:",
+      mergeBtn: "دمج الملفات",
+      footerText: "© برمجة وتصميم أبو علي | جميع الحقوق محفوظة"
+    };
+
+    // Function to set the language
+    function setLanguage(language) {
+      const translations = language === 'en' ? englishTranslations : arabicTranslations;
+      document.getElementById('title').textContent = translations.title;
+      document.getElementById('file1-label').textContent = translations.file1Label;
+      document.getElementById('file2-label').textContent = translations.file2Label;
+      document.getElementById('merge-btn').value = translations.mergeBtn;
+      document.getElementById('footer-text').textContent = translations.footerText;
+    }
+
+    // Set initial language
+    setLanguage('en');
+
+    // Function to update file name display
+    function updateFileName(inputId) {
+      const fileInput = document.getElementById(inputId);
+      const fileNameContainer = document.getElementById(inputId + "-name");
+      fileNameContainer.textContent = fileInput.files[0].name;
+    }
+  </script>
+</body>
+</html>
