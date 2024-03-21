@@ -1,125 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-<body>
-  <h1>Merge PDFs</h1>
-  
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <label for="file1">Select first PDF:</label>
-    <input type="file" name="file1" id="file1">
-    <br>
-    <label for="file2">Select second PDF:</label>
-    <input type="file" name="file2" id="file2">
-    <br>
-    <input type="submit" value="Merge PDFs">
-  </form>
-</body>
-</html> -->
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Merge PDFs</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  .container {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    max-width: 100%;
-    text-align: center;
-  }
-  h1 {
-    color: #333;
-    margin-bottom: 20px;
-  }
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  label {
-    display: block;
-    margin-bottom: 10px;
-    color: #555;
-    font-size: 16px;
-  }
-  input[type="file"] {
-    display: none;
-  }
-  .custom-file-upload {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  .custom-file-upload:hover {
-    background-color: #0056b3;
-  }
-  input[type="submit"] {
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  input[type="submit"]:hover {
-    background-color: #218838;
-  }
-</style>
-</head>
-<body>
-  <div class="container">
-    <h1>Merge PDFs</h1>
-    
-    <form method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-      <label for="file1">Select first PDF:</label>
-      <label class="custom-file-upload" for="file1">Choose File</label>
-      <input type="file" name="file1" id="file1" accept=".pdf" onchange="updateFileName('file1')">
-      <span id="file1-name"></span>
-      <br>
-      <label for="file2">Select second PDF:</label>
-      <label class="custom-file-upload" for="file2">Choose File</label>
-      <input type="file" name="file2" id="file2" accept=".pdf" onchange="updateFileName('file2')">
-      <span id="file2-name"></span>
-      <br>
-      <input type="submit" value="Merge PDFs">
-    </form>
-  </div>
-
-  <script>
-    function updateFileName(inputId) {
-      const fileInput = document.getElementById(inputId);
-      const fileNameContainer = document.getElementById(inputId + "-name");
-      fileNameContainer.textContent = fileInput.files[0].name;
-    }
-  </script>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -236,6 +114,11 @@
       <input type="file" name="file2" id="file2" accept=".pdf" onchange="updateFileName('file2')">
       <span id="file2-name"></span>
       <br>
+      <label for="image" id="image-label">Select image:</label>
+      <label class="custom-file-upload" for="image">Choose Image</label>
+      <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png" onchange="updateFileName('image')">
+      <span id="image-name"></span>
+      <br>
       <input type="submit" value="Merge PDFs" id="merge-btn">
     </form>
   </div>
@@ -250,6 +133,7 @@
       title: "Merge PDFs",
       file1Label: "Select first PDF:",
       file2Label: "Select second PDF:",
+      imageLabel: "Select image:",
       mergeBtn: "Merge PDFs",
       footerText: "© Development and design, Abdulrahman Alshehri | All rights reserved"
     };
@@ -259,6 +143,7 @@
       title: "دمج ملفات PDF",
       file1Label: "حدد الملف الأول:",
       file2Label: "حدد الملف الثاني:",
+      imageLabel: "حدد الصورة:",
       mergeBtn: "دمج الملفات",
       footerText: "© برمجة وتصميم عبدالرحمن الشهري | جميع الحقوق محفوظة"
     };
@@ -269,6 +154,7 @@
       document.getElementById('title').textContent = translations.title;
       document.getElementById('file1-label').textContent = translations.file1Label;
       document.getElementById('file2-label').textContent = translations.file2Label;
+      document.getElementById('image-label').textContent = translations.imageLabel;
       document.getElementById('merge-btn').value = translations.mergeBtn;
       document.getElementById('footer-text').textContent = translations.footerText;
     }
