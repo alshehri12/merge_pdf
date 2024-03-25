@@ -43,6 +43,7 @@ from PyPDF2 import PdfMerger
 from PIL import Image
 import io
 
+
 def upload_form(request):
     if request.method == 'POST':
         try:
